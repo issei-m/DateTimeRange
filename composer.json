@@ -1,0 +1,21 @@
+{
+    "name": "issei-m/date-time-range",
+    "type": "library",
+    "keywords": ["datetime", "range"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Issei Murasawa",
+            "email": "issei.m7@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "": "src/" }
+    },
+    "require": {
+        "php": ">=5.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    }
+}
