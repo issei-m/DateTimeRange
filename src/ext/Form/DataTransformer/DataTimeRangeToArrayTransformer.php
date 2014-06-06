@@ -1,6 +1,6 @@
 <?php
 
-namespace Issei\DateTimeRange\Form\DataTransformer;
+namespace DateTimeRange\Form\DataTransformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;

@@ -1,14 +1,14 @@
 <?php
 
-namespace Issei\DateTimeRange\Form\Type;
+namespace DateTimeRange\Form\Type;
 
-use Issei\DateTimeRange\Form\DataTransformer\DataTimeRangeToArrayTransformer;
+use DateTimeRange\Form\DataTransformer\DataTimeRangeToArrayTransformer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
- * @package    Issei\DateTimeRange
+ * @package    DateTimeRange
  * @subpackage Form\Type
  * @author     Issei Murasawa <issei.m7@gmail.com>
  */

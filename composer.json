@@ -12,8 +12,8 @@
     "autoload": {
         "files": ["src/DateTimeRange.php"],
         "psr-4": {
-            "Issei\\DateTimeRange\\": "src/ext/",
-            "Issei\\DateTimeRange\\Tests\\": "tests/ext"
+            "DateTimeRange\\": "src/ext/",
+            "DateTimeRange\\Tests\\": "tests/ext"
         }
     },
     "require": {

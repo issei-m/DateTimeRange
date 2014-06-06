@@ -1,8 +1,8 @@
 <?php
 
-namespace Issei\DateTimeRange\Tests;
+namespace DateTimeRange\Tests;
 
-use Issei\DateTimeRange\Form\Type\DateRangeType;
+use DateTimeRange\Form\Type\DateRangeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\PreloadedExtension;
