@@ -8,7 +8,7 @@ use Symfony\Component\Form\Exception\TransformationFailedException;
 /**
  * Transforms a DateTimeRange into an array.
  *
- * @package    EIssei\DateTimeRange
+ * @package    Issei\DateTimeRange
  * @subpackage Form\DataTransformer
  * @author     Issei Murasawa <issei.m7@gmail.com>
  */

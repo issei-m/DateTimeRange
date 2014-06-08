@@ -53,7 +53,7 @@ class DateRangeTypeTest extends TypeTestCase
     /**
      * @test
      */
-    public function data_should_able_to_have_one_part_if_submit()
+    public function data_should_able_to_be_submitted_one_part()
     {
         $this->form->submit([
             'start' => '2014/02/14',
