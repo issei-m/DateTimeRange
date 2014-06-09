@@ -1,6 +1,6 @@
 <?php
 
-namespace DateTimeRange\Tests;
+namespace DateTimeRange\Tests\Type;
 
 use DateTimeRange\Form\Type\DateRangeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
