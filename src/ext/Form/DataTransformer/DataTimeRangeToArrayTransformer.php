@@ -20,20 +20,20 @@ class DataTimeRangeToArrayTransformer implements DataTransformerInterface
     public function transform($value)
     {
         if (null === $value) {
-            return [
+            return array(
                 'start' => null,
                 'end'   => null,
-            ];
+            );
         }
 
         if (!$value instanceof \DateTimeRange) {
             throw new TransformationFailedException('Expected a DateTimeRange.');
         }
 
-        return [
+        return array(
             'start' => $value->getStart(),
             'end'   => $value->getEnd(),
-        ];
+        );
     }
 
     /**

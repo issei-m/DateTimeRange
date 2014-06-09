@@ -19,11 +19,11 @@ class DateRangeTypeTest extends TypeTestCase
     {
         $dateType = new DateType();
 
-        return [
-            new PreloadedExtension([
+        return array(
+            new PreloadedExtension(array(
                 $dateType->getName() => $dateType,
-            ], []),
-        ];
+            ), array()),
+        );
     }
 
     protected function setUp()
@@ -35,10 +35,10 @@ class DateRangeTypeTest extends TypeTestCase
 
     public function testSubmit()
     {
-        $this->form->submit([
+        $this->form->submit(array(
             'start' => '2014/02/14',
             'end'   => '2014/03/14',
-        ]);
+        ));
 
         $this->assertTrue($this->form->isValid());
         $this->assertEquals(
@@ -55,9 +55,9 @@ class DateRangeTypeTest extends TypeTestCase
      */
     public function data_should_be_able_to_be_submitted_lacked_one_side()
     {
-        $this->form->submit([
+        $this->form->submit(array(
             'start' => '2014/02/14',
-        ]);
+        ));
 
         $this->assertTrue($this->form->isValid());
 
@@ -72,8 +72,7 @@ class DateRangeTypeTest extends TypeTestCase
      */
     public function data_should_be_null_if_submit_empty()
     {
-        $this->form->submit([
-        ]);
+        $this->form->submit(array());
 
         $this->assertTrue($this->form->isValid());
         $this->assertNull($this->form->getData());

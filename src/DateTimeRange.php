@@ -34,10 +34,10 @@ class DateTimeRange implements Serializable
      */
     public function serialize()
     {
-        return serialize([
+        return serialize(array(
             $this->start,
             $this->end,
-        ]);
+        ));
     }
 
     /**

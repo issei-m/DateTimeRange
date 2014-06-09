@@ -21,14 +21,14 @@ class DateRangeType extends AbstractType
     {
         $builder
             ->addViewTransformer(new DataTimeRangeToArrayTransformer())
-            ->add('start', 'date', [
+            ->add('start', 'date', array(
                 'widget' => $options['widget'],
                 'format' => $options['format'],
-            ])
-            ->add('end', 'date', [
+            ))
+            ->add('end', 'date', array(
                 'widget' => $options['widget'],
                 'format' => $options['format'],
-            ])
+            ))
         ;
     }
 
@@ -37,11 +37,11 @@ class DateRangeType extends AbstractType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults([
+        $resolver->setDefaults(array(
             'widget'     => 'single_text',
             'format'     => 'yyyy/MM/dd',
             'data_class' => null,
-        ]);
+        ));
     }
 
     /**

@@ -14,19 +14,19 @@ class DataTimeRangeToArrayTransformerTest extends \PHPUnit_Framework_TestCase
         $range->expects($this->once())->method('getEnd')->will($this->returnValue(new \DateTime('2014/03/14')));
 
         $transformer = new DataTimeRangeToArrayTransformer();
-        $this->assertEquals([
+        $this->assertEquals(array(
             'start' => new \DateTime('2014/02/14'),
             'end'   => new \DateTime('2014/03/14'),
-        ], $transformer->transform($range));
+        ), $transformer->transform($range));
     }
 
     public function testTransformWithNull()
     {
         $transformer = new DataTimeRangeToArrayTransformer();
-        $this->assertEquals([
+        $this->assertEquals(array(
             'start' => null,
             'end'   => null,
-        ], $transformer->transform(null));
+        ), $transformer->transform(null));
     }
 
     /**
@@ -44,16 +44,16 @@ class DataTimeRangeToArrayTransformerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(new \DateTimeRange(
             new \DateTime('2014/02/14'),
             new \DateTime('2014/03/14')
-        ), $transformer->reverseTransform([
+        ), $transformer->reverseTransform(array(
             'start' => new \DateTime('2014/02/14'),
             'end'   => new \DateTime('2014/03/14'),
-        ]));
+        )));
     }
 
     public function testReverseTransformWithRangeLackedBothSide()
     {
         $transformer = new DataTimeRangeToArrayTransformer();
-        $this->assertNull($transformer->reverseTransform(['start' => null, 'end' => null,]));
+        $this->assertNull($transformer->reverseTransform(array('start' => null, 'end' => null,)));
     }
 
     /**
@@ -67,28 +67,28 @@ class DataTimeRangeToArrayTransformerTest extends \PHPUnit_Framework_TestCase
 
     public function lackedOneSideRangeProvider()
     {
-        return [
-            [
-                [
+        return array(
+            array(
+                array(
                     'start' => null,
                     'end'   => new \DateTime('2014/03/14'),
-                ],
+                ),
                 new \DateTimeRange(
                     null,
                     new \DateTime('2014/03/14')
                 )
-            ],
-            [
-                [
+            ),
+            array(
+                array(
                     'start' => new \DateTime('2014/02/14'),
                     'end'   => null,
-                ],
+                ),
                 new \DateTimeRange(
                     new \DateTime('2014/02/14'),
                     null
                 )
-            ],
-        ];
+            ),
+        );
     }
 
     /**
@@ -104,35 +104,35 @@ class DataTimeRangeToArrayTransformerTest extends \PHPUnit_Framework_TestCase
 
     public function unexpectedDataProvider()
     {
-        return [
-            [
+        return array(
+            array(
                 null,
-            ],
-            [
+            ),
+            array(
                 'string'
-            ],
-            [
-                [
+            ),
+            array(
+                array(
                     'start' => new \DateTime('2014/02/14'),
-                ]
-            ],
-            [
-                [
+                ),
+            ),
+            array(
+                array(
                     'end' => new \DateTime('2014/03/14'),
-                ]
-            ],
-            [
-                [
+                ),
+            ),
+            array(
+                array(
                     'start' => new \DateTime('2014/02/14'),
                     'end'   => 'string',
-                ]
-            ],
-            [
-                [
+                ),
+            ),
+            array(
+                array(
                     'start' => 'string',
                     'end'   => new \DateTime('2014/03/14'),
-                ]
-            ],
-        ];
+                )
+            ),
+        );
     }
 }
