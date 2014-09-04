@@ -1,18 +1,24 @@
 box: wercker/php
 build:
-    # The steps that will be executed on build
     steps:
-      # A custom script step, name value is used in the UI
-      # and the code value contains the command that get executed
       - script:
           name: install dependencies
           code: composer install --no-interaction
       - script:
-          name: echo php information
+          name: run test suite with PHP 5.5
           code: |
-            echo "php version $(php --version) running"
-            echo "from location $(which php)"
-      # Add more steps here:
-      #- script:
-      #    name: run unit tests
-      #    code: phpunit
+              phpenv global 5.5
+              php --version
+              bin/phpunit -c ./
+      - script:
+          name: run test suite with PHP 5.4
+          code: |
+              phpenv global 5.5
+              php --version
+              bin/phpunit -c ./
+      - script:
+          name: run test suite with PHP 5.3
+          code: |
+              phpenv global 5.5
+              php --version
+              bin/phpunit -c ./
