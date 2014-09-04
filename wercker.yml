@@ -13,12 +13,12 @@ build:
       - script:
           name: run test suite with PHP 5.4
           code: |
-              phpenv global 5.5
+              phpenv global 5.4
               php --version
               bin/phpunit -c ./
       - script:
           name: run test suite with PHP 5.3
           code: |
-              phpenv global 5.5
+              phpenv global 5.3
               php --version
               bin/phpunit -c ./
